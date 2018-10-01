@@ -11,12 +11,12 @@ module.exports = {
     after: browser => {
         browser.end()
     },
-    // 'Searching for an item': () => {
-    //     logiData.forEach(product => {
-    //         searchProducts(Logi, product)
-    //         Logi.expect.element('@results').text.to.contain(product).before(5000)
-    //     })
-    // },
+    'Searching for an item': () => {
+        logiData.forEach(product => {
+            searchProducts(Logi, product)
+            Logi.expect.element('@results').text.to.contain(product).before(5000)
+        })
+    },
 
     'Adding items to the shopping cart': browser => {
         searchProducts(Logi, logiData[0])
